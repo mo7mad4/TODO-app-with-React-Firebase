@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from "@mui/material"
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     console.log("💨", "I'm working!!!");
     setTodos([...todos, input]);
     setInput(''); //clear up the input after hitting clicking add todo button
+    console.log(todos);
     
   }
   return (
@@ -20,7 +22,11 @@ function App() {
 
      <form>
         <input value={input} onChange={event => setInput(event.target.value)}/>
-        <button onClick={addTodo}>Add todo</button>
+        <Button variant="contained" color="primary" type="submit" onClick={addTodo} >
+            Add todo
+        </Button>
+        {/* <button type="submit" onChange={addTodo}>Add To Do</button> */}
+
      </form>
 
       <ul>
